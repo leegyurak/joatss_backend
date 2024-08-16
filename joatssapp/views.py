@@ -10,6 +10,12 @@ from joatssapp.serializers import JoatssSerializer
 
 
 class JoatssView(APIView):
+    def is_choseong_only(self, text):
+        # 한글 초성 Unicode 범위 (ㄱ부터 ㅎ까지)
+        choseong_pattern = re.compile(r'^[ㄱ-ㅎ\s]+$')
+        
+        # 문자열이 초성만으로 이루어져 있는지 확인합니다.
+        return bool(choseong_pattern.match(text))
 
     def post(self, request):
         serializer = JoatssSerializer(data=request.data)
@@ -17,6 +23,10 @@ class JoatssView(APIView):
         client = anthropic.Anthropic(
             api_key=os.environ['CLAUDE_API_KEY'],  # 환경 변수를 설정했다면 생략 가능
         )
+        if self.is_choseong_only(serializer.validated_data['text']):
+            return Response({
+                "result": "초성보다는 풀 문장이 더 좋았쓰!"
+            })
 
         message = client.messages.create(
             model="claude-3-opus-20240229",
