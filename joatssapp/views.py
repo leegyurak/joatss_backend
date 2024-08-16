@@ -1,6 +1,7 @@
 import anthropic
 import json
 import os
+import re
 
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -27,6 +28,7 @@ class JoatssView(APIView):
         )
 
         answer: str = json.loads(message.model_dump_json())["content"][0]["text"]
+        answer = re.split(r'(?<=[.!?])\s+', answer)[1]
         if not answer.endswith("좋았쓰!"):
             answer = "대답이 이상해서 개발자가 가로챘지만 다시 하면 될 것 같으니까 좋았쓰!"
         return Response({
