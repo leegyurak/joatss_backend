@@ -39,6 +39,10 @@ class JoatssView(APIView):
             return Response({
                 "result": "초성보다는 풀 문장이 더 좋았쓰!"
             })
+        if serializer.validated_data['text'] == '':
+            return Response({
+                "result": "문장을 채워주면 좋았쓰!"
+            })
 
         message = client.messages.create(
             model="claude-3-opus-20240229",
