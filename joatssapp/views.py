@@ -6,6 +6,7 @@ import re
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from joatssapp.models import Traffic
 from joatssapp.serializers import JoatssSerializer
 
 
@@ -16,8 +17,19 @@ class JoatssView(APIView):
         
         # 문자열이 초성만으로 이루어져 있는지 확인합니다.
         return bool(choseong_pattern.match(text))
+    
+    def get_client_ip(self, request):
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
 
     def post(self, request):
+        ip = self.get_client_ip(request)
+        Traffic.objects.create(ip=ip)
+        
         serializer = JoatssSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         client = anthropic.Anthropic(
