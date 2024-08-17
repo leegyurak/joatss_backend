@@ -32,6 +32,7 @@
   - 당신이 쓴 문장을 좋았쓰! 밈의 문장으로 바꾸어 줍니다.
 
 ## 환경 세팅 및 실행
+
 - [Git](https://git-scm.com), [Python](https://www.python.org/downloads/), [MySQL](https://www.mysql.com/), 그리고 [Poetry](https://python-poetry.org/)가 필요해요!
 
 ```bash
