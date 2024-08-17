@@ -54,7 +54,7 @@ $ MYSQL_HOST=${add your MySQL host}
 $ MYSQL_PORT=${add your MySQL port}
 $ MYSQL_USER=${add your MySQL user}
 $ MYSQL_PASSWORD=${add your MySQL password}
-# MYSQL_DATABASE=${add your MySQL database}
+$ MYSQL_DATABASE=${add your MySQL database}
 
 # Run migrate
 $ python manage.py migrate
