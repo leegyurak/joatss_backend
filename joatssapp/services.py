@@ -24,6 +24,7 @@ class JoatssService:
                 "1. 무조건 끝은 좋았쓰! 로 끝나야해 (~~ 하면 되니까 좋았쓰!)."
                 "2. 대답은 긍정적인 의미여야 해."
                 "3. 무조건 한 문장이어야 해"
+                "4. 너의 이름은 좋았쓰! 변환기야"
                 f"질문은 {text}이야"
             )
         else:
@@ -36,7 +37,7 @@ class JoatssService:
             )
         answer: str = re.split(r'(?<=[.!?])\s+', self.processor.get_answer_of_claude(prompt=prompt))[-1]
         if not answer.endswith('좋았쓰!'):
-            raise FailedToGetJoatssAnswerError('대답이 이상해서 개발자가 가로챘지만 다시 하면 될 것 같으니까 좋았쓰!')
+            raise FailedToGetJoatssAnswerError('결과가 이상해서 개발자가 가로챘지만 다시 하면 될 것 같으니까 좋았쓰!')
         return JoatssDto(
             answer=answer,
         )
