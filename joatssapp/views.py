@@ -11,14 +11,7 @@ from joatssapp.serializers import JoatssResponseSerializer, JoatssRequestSeriali
 from joatssapp.services import JoatssService
 
 
-class JoatssView(APIView):
-    def is_choseong_only(self, text):
-        # 한글 초성 Unicode 범위 (ㄱ부터 ㅎ까지)
-        choseong_pattern = re.compile(r'^[ㄱ-ㅎ\s]+$')
-        
-        # 문자열이 초성만으로 이루어져 있는지 확인합니다.
-        return bool(choseong_pattern.match(text))
-    
+class JoatssView(APIView):    
     def get_client_ip(self, request):
         x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
         if x_forwarded_for:
