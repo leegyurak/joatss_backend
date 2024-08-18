@@ -15,13 +15,6 @@
   <img src="https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions" alt="Github Action">
 </p>
 
-<p align="center">
-  <a href="#주요 기능">주요 기능</a> •
-  <a href="#환경 세팅 및 실행">환경 세팅 및 실행</a> •
-  <a href="#사용하기">사용하기</a> •
-  <a href="#License">License</a>
-</p>
-
 ![스크린샷](https://github.com/user-attachments/assets/05933c2a-77d5-4d75-81ef-b64484577a88)
 
 ## 주요 기능
