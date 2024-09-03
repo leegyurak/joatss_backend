@@ -61,7 +61,11 @@ $ python manage.py runserver
 
 ## 사용하기
 
-- [좋았쓰! 변환기 접속](https://joatss.devgyurak.com) 
+- [좋았쓰! 변환기 접속](https://joatss.devgyurak.com)
+
+## 프로젝트 회고
+
+- [어쨌든 완성했으니까 좋았쓰! (좋았쓰! 변환기 프로젝트 회고)](https://velog.io/@devgyurak/%EC%96%B4%EC%A8%8C%EB%93%A0-%EC%99%84%EC%84%B1%ED%96%88%EC%9C%BC%EB%8B%88%EA%B9%8C-%EC%A2%8B%EC%95%98%EC%93%B0-%EC%A2%8B%EC%95%98%EC%93%B0-%EB%B3%80%ED%99%98%EA%B8%B0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0) 
 
 ## License
 
