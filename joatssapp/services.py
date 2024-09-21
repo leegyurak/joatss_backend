@@ -12,7 +12,7 @@ class JoatssService:
         self.repository: JoatssRepository = JoatssRepository()
         self.processor: AnthropicProcessor = AnthropicProcessor()
 
-    def get_joatss_answer(self, ip: str, text: str):
+    def get_joatss_answer(self, ip: str, text: str) -> JoatssDto:
         self.repository.create_traffic(ip=ip)
         if is_choseong_only(text):
             raise FailedToGetJoatssAnswerError('초성 보다는 완벽한 문장이 좋았쓰!')
